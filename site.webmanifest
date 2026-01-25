@@ -1,6 +1,6 @@
 {
   "name": "PLC-Zone",
-  "short_name": "MySite",
+  "short_name": "PLC-Zone",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -16,6 +16,6 @@
     }
   ],
   "theme_color": "#ffffff",
-  "background_color": "#0d6efd",
+  "background_color": "#ffffff",
   "display": "standalone"
 }
