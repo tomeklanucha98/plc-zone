@@ -103,7 +103,7 @@
                         <p class="card-text text-secondary" data-lang-key="tut1_desc">Jak budować bloki FB, FC i DB, aby kod był czytelny, łatwy w utrzymaniu i skalowalny.</p>
                     </div>
                     <div class="card-footer bg-transparent border-0 pb-3">
-                        <a href="tutorial-strukturyzacja.html" class="btn btn-outline-primary btn-sm" data-lang-key="tut_read">Czytaj poradnik →</a>
+                        <a href="#" class="btn btn-outline-primary btn-sm" data-lang-key="tut_read">Czytaj poradnik →</a>
                     </div>
                 </div>
             </div>
@@ -154,6 +154,7 @@
 <script>
     const translations = {
         pl: {
+            meta_title: "Tutoriale TIA Portal | PLC-Zone",
             nav_services: "Usługi",
             nav_tech: "Technologie",
             nav_experience: "Doświadczenie",
@@ -174,6 +175,7 @@
             footer_text: "© 2026 • PLC-Zone • Programowanie PLC Siemens • Podkarpacie"
         },
         en: {
+            meta_title: "TIA Portal Tutorials | PLC-Zone",
             nav_services: "Services",
             nav_tech: "Technologies",
             nav_experience: "Experience",
@@ -198,6 +200,11 @@
     function setLanguage(lang) {
         localStorage.setItem('preferred_lang', lang);
         document.documentElement.lang = lang;
+
+        // Dynamiczna zmiana tytułu w karcie przeglądarki
+        if (translations[lang] && translations[lang].meta_title) {
+            document.title = translations[lang].meta_title;
+        }
 
         document.getElementById('lang-pl').classList.toggle('active', lang === 'pl');
         document.getElementById('lang-en').classList.toggle('active', lang === 'en');
