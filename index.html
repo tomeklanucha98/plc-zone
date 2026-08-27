@@ -238,6 +238,7 @@
 <script>
     const translations = {
         pl: {
+            meta_title: "PLC-Zone | Programowanie PLC i robotów przemysłowych",
             nav_services: "Usługi",
             nav_tech: "Technologie",
             nav_experience: "Doświadczenie",
@@ -272,6 +273,7 @@
             footer_text: "© 2026 • PLC-Zone • Programowanie PLC Siemens • Podkarpacie"
         },
         en: {
+            meta_title: "PLC-Zone | PLC and Industrial Robotics Programming",
             nav_services: "Services",
             nav_tech: "Technologies",
             nav_experience: "Experience",
@@ -310,6 +312,11 @@
     function setLanguage(lang) {
         localStorage.setItem('preferred_lang', lang);
         document.documentElement.lang = lang;
+
+        // Dynamiczne ustawianie tytułu okna przeglądarki (<title>)
+        if (translations[lang] && translations[lang].meta_title) {
+            document.title = translations[lang].meta_title;
+        }
 
         document.getElementById('lang-pl').classList.toggle('active', lang === 'pl');
         document.getElementById('lang-en').classList.toggle('active', lang === 'en');
